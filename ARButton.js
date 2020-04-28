@@ -65,7 +65,10 @@ var ARButton = {
 
 				if ( currentSession === null ) {
 
-					navigator.xr.requestSession( 'immersive-ar' ).then( onSessionStarted );
+					navigator.xr.requestSession( 'immersive-ar' )
+					.catch(e => console.log(e))
+					.then( onSessionStarted )
+					.catch(e => console.log(e));
 
 				} else {
 
